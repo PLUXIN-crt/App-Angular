@@ -1,0 +1,33 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+  }
+  
+  .central-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid #fff; /* Borde blanco alrededor de la imagen, opcional */
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #fff; /* Texto blanco */
+  }
+  
+  .center-button {
+    margin-top: 20px;
+    width: 50%; /* Ajusta este valor según lo que prefieras */
+    color: #fff; /* Color del texto del botón */
+    --background: #333; /* Fondo del botón, ajustable según preferencia */
+    --border-radius: 8px; /* Borde redondeado para un estilo más moderno */
+  }
+  

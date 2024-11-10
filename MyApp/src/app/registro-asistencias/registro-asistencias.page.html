@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button> <!-- Botón para retroceder -->
+    </ion-buttons>
+    <ion-title>Registro Asistencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="asistencia-container">
+    <!-- Muestra la imagen solo si showQRImage es verdadero -->
+    <div *ngIf="showQRImage" class="qr-container">
+      <img src="assets/source/QR.png" alt="Código QR" class="qr-image">
+    </div>
+
+    <ion-button expand="block" class="generate-button" (click)="generateQR()">
+      Generar QR
+    </ion-button>
+  </div>
+</ion-content>

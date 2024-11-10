@@ -1,0 +1,63 @@
+{
+    "users": [
+      { 
+        "username": "Juan", 
+        "password": "1234",
+        "email": "j@mail.com",
+        "role": "profesor",
+        "id": "1"
+      },
+      { 
+        "username": "Ana", 
+        "password": "1234",
+        "email": "a@mail.com",
+        "role": "profesor",
+        "id": "2"
+      },
+      { 
+        "username": "Luis", 
+        "password": "1234",
+        "email": "l@mail.com",
+        "role": "estudiante",
+        "id": "3"
+      },
+      { 
+        "username": "Adams", 
+        "password": "1234",
+        "email": "ad@mail.com",
+        "role": "estudiante",
+        "id": "4"
+      }
+    ],
+    "subjects": [
+      {
+        "id": "001-D",
+        "name": "Matematica Aplicada"
+      },
+      {
+        "id": "003-A",
+        "name": "Programacion mobile"
+      },
+      {
+        "id": "001-D",
+        "name": "Estadistica"
+      },
+      {
+        "id": "004-A",
+        "name": "Ingles Avanzado"
+      },
+      {
+        "id": "003-B",
+        "name": "Etica"
+      },
+      {
+        "id": "005-B",
+        "name": "Arquitectura"
+      },
+      {
+        "id": "006-F",
+        "name": "Calidad de software"
+      }
+    ]
+  }
+  

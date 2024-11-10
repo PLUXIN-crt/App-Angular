@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button> <!-- Botón para retroceder -->
+    </ion-buttons>
+    <ion-title>Asistencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="asistencia-container">
+    <ion-list>
+      <ion-item-group *ngFor="let registro of registros">
+        <ion-item detail="true" (click)="registro.expandido = !registro.expandido">
+          <ion-label>
+            <h2>{{ registro.asignatura }}</h2>
+            <p>{{ registro.codigo }}</p>
+            <p>{{ calcularPorcentaje(registro) }}% ({{ registro.clasesAsistidas }} DE {{ registro.totalClases }} CLASES)</p>
+          </ion-label>
+        </ion-item>
+        
+        <div *ngIf="registro.expandido" class="detalle-asistencia">
+          <ion-item *ngFor="let asistencia of registro.asistencias">
+            <ion-label>
+              <h3>Fecha: {{ asistencia.fecha | date: 'fullDate' }}</h3>
+              <p>Asistencia: {{ asistencia.presente ? 'Presente' : 'Ausente' }}</p>
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-item-group>
+    </ion-list>
+  </div>
+</ion-content>

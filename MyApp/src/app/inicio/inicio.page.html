@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="header-title">Inicio de Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <h1 class="login-title">Ingrese sus datos</h1>
+
+    <!-- Campo de Usuario -->
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="username" type="text" placeholder="Ingrese su usuario" class="input-field"></ion-input>
+    </ion-item>
+
+    <!-- Campo de Contraseña -->
+    <ion-item class="input-item">
+      <ion-input [(ngModel)]="password" type="password" placeholder="*****" class="input-field"></ion-input>
+    </ion-item>
+
+    <!-- Texto interactivo para enviar al correo, ubicado debajo del campo de contraseña -->
+    <p class="enviar-correo-texto" (click)="enviarCorreo()">Olvide mi contraseña</p>
+
+    <!-- Botón de Inicio de Sesión con evento click -->
+    <ion-button expand="block" class="login-button" (click)="login()">Iniciar Sesión</ion-button>
+
+    <!-- Mensaje de error si los datos son incorrectos -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+</ion-content>

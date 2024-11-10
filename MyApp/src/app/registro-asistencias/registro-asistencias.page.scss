@@ -1,0 +1,34 @@
+.asistencia-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000; /* Fondo negro */
+  }
+  
+  .generate-button {
+    --background: #444; /* Fondo del botón */
+    --color: #fff; /* Texto blanco */
+    --border-radius: 8px; /* Bordes redondeados */
+    padding: 15px 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    margin-top: 20px; /* Añade margen para separar el botón de la imagen */
+  }
+  
+  .qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /* Fondo oscuro */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Añade margen para separar la imagen del botón */
+  }
+  
+  .qr-image {
+    max-width: 90%;
+    border-radius: 8px;
+  }
+  

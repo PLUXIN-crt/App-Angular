@@ -1,0 +1,38 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+  }
+  
+  .input-item {
+    --background: #222; /* Fondo oscuro para los campos de entrada */
+    color: #fff; /* Texto blanco */
+    margin-bottom: 20px;
+  }
+  
+  ion-label {
+    color: #fff; /* Texto blanco para los labels */
+  }
+  
+  ion-input {
+    color: #fff; /* Texto blanco para el input */
+  }
+  
+  .center-button {
+    --background: #444; /* Fondo del botón */
+    color: #fff; /* Texto blanco del botón */
+    margin-top: 20px;
+    --border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  .error-message {
+    color: #ff4d4d; /* Color rojo para mensajes de error */
+    margin-top: 10px;
+    text-align: center;
+  }
+  

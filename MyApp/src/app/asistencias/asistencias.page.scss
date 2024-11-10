@@ -1,0 +1,24 @@
+.asistencia-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px;
+    background-color: #000; /* Fondo negro */
+  }
+  
+  ion-item {
+    --background: #333; /* Fondo oscuro */
+    --color: #fff; /* Texto blanco */
+    margin: 5px 0;
+    border-radius: 8px;
+  }
+  
+  .detalle-asistencia {
+    padding: 10px;
+    background-color: #222; /* Fondo más oscuro para los detalles */
+    border-left: 4px solid #1e90ff; /* Línea decorativa */
+    border-radius: 8px;
+    margin: 5px 0;
+  }
+  
