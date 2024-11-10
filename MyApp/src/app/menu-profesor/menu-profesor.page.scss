@@ -1,0 +1,77 @@
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+  }
+  
+  ion-card {
+    text-align: center;
+    background-color: #333; /* Fondo oscuro de la tarjeta */
+    color: #fff; /* Texto blanco dentro de la tarjeta */
+    border: 1px solid #fff; /* Borde blanco opcional */
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  ion-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid #fff; /* Borde blanco alrededor de la imagen, opcional */
+  }
+  
+  ion-card-content {
+    color: #fff; /* Asegura que el texto dentro del contenido de la tarjeta sea blanco */
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Muestra '...' si el texto es muy largo */
+  }
+  
+  ion-button {
+    --background: #444; /* Fondo del botón */
+    --border-radius: 8px; /* Bordes redondeados */
+    color: #fff; /* Texto blanco del botón */
+    margin-top: 10px;
+  }
+  
+  h2 {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    margin: 5px 0; /* Ajusta el margen para dar más espacio */
+    line-height: 1.2; /* Reduce el espaciado entre líneas */
+    color: #fff; /* Asegura que el color sea consistente */
+  }
+  
+  .asignatura-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor */
+    border-bottom: 2px solid #333; /* Línea decorativa oscura */
+  }
+  
+  ion-card-content {
+    color: #fff; /* Asegura que el texto dentro del contenido de la tarjeta sea blanco */
+    text-align: center;
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+    font-size: 12px; /* Ajusta el tamaño del texto para evitar que se divida */
+    line-height: 1.2; /* Ajusta la altura de línea para una mejor alineación */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* Ajusta la altura para un diseño consistente */
+  }
+  
+  h2 {
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    margin: 5px 0; /* Ajusta el margen para dar más espacio */
+    line-height: 1.2; /* Reduce el espaciado entre líneas */
+    color: #fff; /* Asegura que el color sea consistente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
