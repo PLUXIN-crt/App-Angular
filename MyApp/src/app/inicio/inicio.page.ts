@@ -26,6 +26,7 @@ export class InicioPage {
         this.errorMessage = ''; // Si las credenciales son correctas, eliminamos el mensaje de error
         console.log('Inicio de sesión exitoso');
         localStorage.setItem('userType', user.role); // Guarda el tipo de usuario en el almacenamiento local
+        localStorage.setItem('username', user.username); // Guarda el nombre de usuario en el almacenamiento local
         if (user.role === 'profesor') {
           this.navCtrl.navigateForward('/menu'); // Redirigir a la página de menú para profesores
         } else if (user.role === 'estudiante') {

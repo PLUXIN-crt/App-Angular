@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cambio-clave',
@@ -12,35 +13,49 @@ export class CambioClavePage {
   confirmPassword: string = '';
   errorMessage: string = '';
 
-  // Credenciales de usuario, simulando obtenerlas desde un servicio
-  private readonly validUsername: string = 'Usuario1';
-  private validPassword: string = 'MiClav3'; // Aquí se guarda la contraseña actual
-
-  constructor(private navCtrl: NavController, private alertController: AlertController) {}
+  constructor(
+    private navCtrl: NavController,
+    private alertController: AlertController,
+    private http: HttpClient
+  ) {}
 
   // Método para cambiar la contraseña
   async changePassword() {
-    if (this.currentPassword !== this.validPassword) {
-      this.errorMessage = 'La contraseña actual es incorrecta.';
-      return;
-    }
+    // Obtener el usuario actual desde el almacenamiento local
+    const username = localStorage.getItem('username');
 
+    // Validar la nueva contraseña y la confirmación
     if (this.newPassword !== this.confirmPassword) {
       this.errorMessage = 'La nueva contraseña y la confirmación no coinciden.';
       return;
     }
 
+    // Validar la longitud de la nueva contraseña
     if (this.newPassword.length < 6) {
       this.errorMessage = 'La nueva contraseña debe tener al menos 6 caracteres.';
       return;
     }
 
-    // Actualizar la contraseña (simulado aquí)
-    this.validPassword = this.newPassword;
-    this.errorMessage = '';
+    // Realizar la solicitud HTTP GET para obtener los datos del usuario
+    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+      const user = users.find(u => u.username === username);
+      if (user) {
+        // Verificar la contraseña actual
+        if (user.password !== this.currentPassword) {
+          this.errorMessage = 'La contraseña actual es incorrecta.';
+          return;
+        }
 
-    // Mostrar el pop-up de confirmación
-    await this.showSuccessAlert();
+        // Actualizar la contraseña
+        user.password = this.newPassword;
+        this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(() => {
+          this.errorMessage = '';
+          this.showSuccessAlert(); // Mostrar el pop-up de confirmación
+        });
+      } else {
+        this.errorMessage = 'Usuario no encontrado.';
+      }
+    });
   }
 
   // Método para mostrar el pop-up de éxito
