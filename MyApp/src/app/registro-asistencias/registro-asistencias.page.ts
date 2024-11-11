@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro-asistencias',
@@ -7,29 +7,27 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./registro-asistencias.page.scss'],
 })
 export class RegistroAsistenciasPage {
-  showQRImage: boolean = false; // Controla la visualización de la imagen
+  asignaturas: string[] = [
+    'Matematica Aplicada 001-D',
+    'Programacion mobile 003-A',
+    'Estadistica 001-D',
+    'Ingles Avanzado 004-A',
+    'Etica 003-B',
+    'Arquitectura 005-B',
+    'Calidad de software 006-F'
+  ];
+  
+  isQRModalOpen: boolean = false;
+  selectedAsignatura: string = '';
 
-  constructor(private alertController: AlertController) {}
+  constructor(private modalController: ModalController) {}
 
-  async generateQR() {
-    const alert = await this.alertController.create({
-      header: 'Código QR Generado',
-      message: 'Presiona "Cerrar" para ver el código QR.',
-      buttons: [
-        {
-          text: 'Cerrar',
-          handler: () => {
-            this.showQR(); // Llama a la función para mostrar la imagen
-          }
-        }
-      ],
-      cssClass: 'custom-alert',
-    });
-
-    await alert.present();
+  openQRModal(asignatura: string) {
+    this.selectedAsignatura = asignatura;
+    this.isQRModalOpen = true;
   }
 
-  showQR() {
-    this.showQRImage = true; // Activa la visualización de la imagen
+  closeQRModal() {
+    this.isQRModalOpen = false;
   }
 }

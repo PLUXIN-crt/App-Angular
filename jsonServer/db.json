@@ -32,31 +32,38 @@
   "subjects": [
     {
       "id": "001-D",
-      "name": "Matematica Aplicada"
+      "name": "Matematica Aplicada",
+      "unique id":"1"
     },
     {
       "id": "003-A",
-      "name": "Programacion mobile"
+      "name": "Programacion mobile",
+      "unique id":"2"
     },
     {
       "id": "001-D",
-      "name": "Estadistica"
+      "name": "Estadistica",
+      "unique id":"3"
     },
     {
       "id": "004-A",
-      "name": "Ingles Avanzado"
+      "name": "Ingles Avanzado",
+      "unique id":"4"
     },
     {
       "id": "003-B",
-      "name": "Etica"
+      "name": "Etica",
+      "unique id":"5"
     },
     {
       "id": "005-B",
-      "name": "Arquitectura"
+      "name": "Arquitectura",
+      "unique id":"6"
     },
     {
       "id": "006-F",
-      "name": "Calidad de software"
+      "name": "Calidad de software",
+      "unique id":"7"
     }
   ]
 }
