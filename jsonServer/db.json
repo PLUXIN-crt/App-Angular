@@ -19,67 +19,127 @@
       "password": "1234",
       "email": "l@mail.com",
       "role": "estudiante",
-      "section": "A",
+      "section": "001-D",
       "id": "3"
     },
     {
-      "username": "Adams",
+      "username": "Maria",
       "password": "1234",
-      "email": "ad@mail.com",
+      "email": "m@mail.com",
       "role": "estudiante",
-      "section": "B",
+      "section": "002-D",
       "id": "4"
+    },
+    {
+      "username": "Carlos",
+      "password": "1234",
+      "email": "c@mail.com",
+      "role": "estudiante",
+      "section": "003-D",
+      "id": "5"
+    },
+    {
+      "username": "Elena",
+      "password": "1234",
+      "email": "e@mail.com",
+      "role": "estudiante",
+      "section": "001-A",
+      "id": "6"
+    },
+    {
+      "username": "Pedro",
+      "password": "1234",
+      "email": "p@mail.com",
+      "role": "estudiante",
+      "section": "002-A",
+      "id": "7"
+    },
+    {
+      "username": "Lucia",
+      "password": "1234",
+      "email": "lu@mail.com",
+      "role": "estudiante",
+      "section": "003-A",
+      "id": "8"
+    },
+    {
+      "username": "Miguel",
+      "password": "1234",
+      "email": "mi@mail.com",
+      "role": "estudiante",
+      "section": "001-C",
+      "id": "9"
+    },
+    {
+      "username": "Sofia",
+      "password": "1234",
+      "email": "so@mail.com",
+      "role": "estudiante",
+      "section": "002-C",
+      "id": "10"
+    },
+    {
+      "username": "Diego",
+      "password": "1234",
+      "email": "d@mail.com",
+      "role": "estudiante",
+      "section": "003-C",
+      "id": "11"
     }
   ],
   "subjects": [
     {
-      "id": "001-D",
-      "name": "Matematica Aplicada",
-      "unique id": "1"
+      "id": "1",
+      "name": "Matemáticas"
     },
     {
-      "id": "003-A",
-      "name": "Programacion mobile",
-      "unique id": "2"
+      "id": "2",
+      "name": "Programacion Movile"
     },
     {
-      "id": "001-D",
-      "name": "Estadistica",
-      "unique id": "3"
+      "id": "3",
+      "name": "Estadistica"
     },
     {
-      "id": "004-A",
-      "name": "Ingles Avanzado",
-      "unique id": "4"
+      "id": "4",
+      "name": "Ingles Avanzado"
     },
     {
-      "id": "003-B",
-      "name": "Etica",
-      "unique id": "5"
+      "id": "5",
+      "name": "Etica"
     },
     {
-      "id": "005-B",
-      "name": "Arquitectura",
-      "unique id": "6"
+      "id": "6",
+      "name": "Arquitectura"
     },
     {
-      "id": "006-F",
-      "name": "Calidad de software",
-      "unique id": "7"
+      "id": "7",
+      "name": "Calidad de software"
     }
+  ],
+  "sections": [
+    "001-D",
+    "002-D",
+    "003-D",
+    "001-A",
+    "002-A",
+    "003-A",
+    "001-C",
+    "002-C",
+    "003-C"
   ],
   "attendances": [
     {
       "studentId": "3",
       "subjectId": "1",
-      "date": "2023-10-10",
-      "present": true
+      "section": "001-D",
+      "date": "2023-10-01"
     },
     {
       "studentId": "4",
       "subjectId": "2",
-      "date": "2023-10-10",
-      "present": false
+      "section": "002-D",
+      "date": "2023-10-01"
     }
   ]
 }
