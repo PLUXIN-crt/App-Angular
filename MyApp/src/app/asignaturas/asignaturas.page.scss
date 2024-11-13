@@ -6,13 +6,36 @@
   background-color: #000; /* Fondo negro */
 }
 
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Espacio entre el QR y las asignaturas */
+}
+
+.qr-input {
+  width: 100%;
+  max-width: 350px;
+  padding: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: #fff;
+}
+
+.qr-image {
+  margin-top: 10px;
+}
+
 .asignatura-card {
   width: 100%;
   max-width: 400px;
   margin-bottom: 15px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra más suave para dar profundidad */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
   background-color: #222; /* Fondo oscuro de la tarjeta */
 }
 

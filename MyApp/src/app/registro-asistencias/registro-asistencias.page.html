@@ -1,35 +1,25 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/menu"></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button> <!-- Botón para ir hacia atrás -->
     </ion-buttons>
-    <ion-title>Registro Asistencias</ion-title>
+    <ion-title>Registro de Asistencias</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let asignatura of asignaturas" class="asignatura-item" (click)="openQRModal(asignatura)">
-      <ion-label>
-        <h2>{{ asignatura }}</h2>
-        <p>CSY4111</p>
-      </ion-label>
-      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
-    </ion-item>
-  </ion-list>
+<ion-content [fullscreen]="true" class="asignaturas-container">
+  <div class="qr-container">
+    <input type="text" [(ngModel)]="texto" placeholder="Contenido del QR" class="qr-input" readonly>
+    <br>
+    <qrcode [qrdata]="texto" [width]="350" class="qr-image"></qrcode>
+  </div>
 
-  <!-- Modal para mostrar el QR -->
-  <ion-modal [isOpen]="isQRModalOpen" (ionModalDidDismiss)="closeQRModal()">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>{{ selectedAsignatura }}</ion-title>
-        <ion-buttons slot="end">
-          <ion-button (click)="closeQRModal()">Cerrar</ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="qr-content">
-      <img src="assets/source/QR.png" alt="Código QR" class="qr-image">
-    </ion-content>
-  </ion-modal>
+  <ion-list>
+    <ion-card *ngFor="let asignatura of asignaturas" class="asignatura-card" (click)="generarQR(asignatura)">
+      <img src="assets/source/bannertest.jpeg" alt="Imagen de asignatura" class="asignatura-img">
+      <ion-card-content class="asignatura-content">
+        <h2>{{ asignatura }}</h2>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

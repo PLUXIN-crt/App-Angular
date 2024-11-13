@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro-asistencias',
@@ -7,27 +6,18 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./registro-asistencias.page.scss'],
 })
 export class RegistroAsistenciasPage {
+  texto: string = ''; // Cambia a string
   asignaturas: string[] = [
-    'Matematica Aplicada 001-D',
-    'Programacion mobile 003-A',
-    'Estadistica 001-D',
-    'Ingles Avanzado 004-A',
-    'Etica 003-B',
-    'Arquitectura 005-B',
-    'Calidad de software 006-F'
+    'Matemáticas',
+    'Programacion Movile',
+    'Estadistica',
+    'Ingles avanzado',
+    'Etica',
+    'Arquitectura',
+    'calidad de software'
   ];
-  
-  isQRModalOpen: boolean = false;
-  selectedAsignatura: string = '';
 
-  constructor(private modalController: ModalController) {}
-
-  openQRModal(asignatura: string) {
-    this.selectedAsignatura = asignatura;
-    this.isQRModalOpen = true;
-  }
-
-  closeQRModal() {
-    this.isQRModalOpen = false;
+  generarQR(asignatura: string) {
+    this.texto = asignatura; // Asigna una cadena
   }
 }

@@ -47,6 +47,10 @@ const routes: Routes = [
     path: 'menu-profesor',
     loadChildren: () => import('./menu-profesor/menu-profesor.module').then( m => m.MenuProfesorPageModule)
   },
+  {
+    path: 'lector-qr',
+    loadChildren: () => import('./lector-qr/lector-qr.module').then( m => m.LectorQrPageModule)
+  },
 ];
 
 @NgModule({
