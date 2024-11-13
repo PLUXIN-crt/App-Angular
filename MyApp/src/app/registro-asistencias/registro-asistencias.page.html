@@ -1,19 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button> <!-- Botón para ir hacia atrás -->
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>Registro de Asistencias</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true" class="asignaturas-container">
   <div class="qr-container">
     <input type="text" [(ngModel)]="texto" placeholder="Contenido del QR" class="qr-input" readonly>
     <br>
     <qrcode [qrdata]="texto" [width]="350" class="qr-image"></qrcode>
   </div>
-
   <ion-list>
     <ion-card *ngFor="let asignatura of asignaturas" class="asignatura-card" (click)="generarQR(asignatura)">
       <img src="assets/source/bannertest.jpeg" alt="Imagen de asignatura" class="asignatura-img">

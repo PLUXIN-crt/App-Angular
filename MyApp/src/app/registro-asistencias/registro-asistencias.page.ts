@@ -12,7 +12,7 @@ export class RegistroAsistenciasPage {
     'Programacion Movile',
     'Estadistica',
     'Ingles avanzado',
-    'Etica',
+    'Etica', 
     'Arquitectura',
     'calidad de software'
   ];

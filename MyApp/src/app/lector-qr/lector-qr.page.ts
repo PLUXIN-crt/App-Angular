@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lector-qr',
@@ -8,35 +9,32 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
   styleUrls: ['./lector-qr.page.scss'],
 })
 export class LectorQrPage implements OnInit {
-  scanResult: any;
+  qrScanned: boolean = false;
+  scanResult: string = ''; // Propiedad para almacenar el resultado del escaneo
 
-  constructor(private modalCtrl: ModalController) { }
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  async startScan() {
-    const modal = await this.modalCtrl.create({
-      component: BarcodeScanningModalComponent,
-      cssClass: 'barcode-scanning-modal',
-      showBackdrop: false,
-      componentProps: {
-        formats: [],
-        lensFacing: 'back'
-      }
-    });
-
-    await modal.present();
-
-    const { data } = await modal.onWillDismiss();
-    if (data) {
-      this.scanResult = data?.barcode?.displayValue;
-      this.registrarAsistencia(this.scanResult);
+  handleQrCodeResult(result: string) {
+    try {
+      this.scanResult = result; // Almacena el resultado del escaneo
+      this.qrScanned = true;
+    } catch (error) {
+      console.error('Error parsing QR code:', error);
+      alert('Código QR inválido');
     }
   }
 
-  registrarAsistencia(scanResult: string) {
-    // Implementa la lógica para registrar la asistencia aquí
-    console.log('Asistencia registrada con el código:', scanResult);
+  onSubmit() {
+    if (!this.qrScanned) {
+      alert('Debe escanear el código QR para registrar la asistencia');
+      return;
+    }
+    // Código para registrar la asistencia
   }
 }

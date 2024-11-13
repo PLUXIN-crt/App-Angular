@@ -1,17 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>lector-qr</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/DuocLogo.png" alt="No disponible" id="duoclogo">
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">lector-qr</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-button expand="block" (click)="startScan()">Iniciar Escaneo</ion-button>
-  <div *ngIf="scanResult">
-    <p>Resultado del escaneo: {{ scanResult }}</p>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container">
+    <h3 id="h3registrQR">Registrar asistencia</h3>
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Registrar Asistencia</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <zxing-scanner (scanSuccess)="handleQrCodeResult($event)"></zxing-scanner>
+    <div *ngIf="scanResult">
+      <p>Resultado del escaneo: {{ scanResult }}</p>
+    </div>
   </div>
 </ion-content>
