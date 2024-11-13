@@ -10,4 +10,8 @@
       <ion-title size="large">lector-qr</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-button expand="block" (click)="startScan()">Iniciar Escaneo</ion-button>
+  <div *ngIf="scanResult">
+    <p>Resultado del escaneo: {{ scanResult }}</p>
+  </div>
 </ion-content>
