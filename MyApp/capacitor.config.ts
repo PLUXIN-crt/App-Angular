@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-registrar-asistencia',
-  templateUrl: './registrar-asistencia.page.html',
-  styleUrls: ['./registrar-asistencia.page.scss'],
+  selector: 'app-lector-qr',
+  templateUrl: './lector-qr.page.html',
+  styleUrls: ['./lector-qr.page.scss'],
 })
-export class RegistrarAsistenciaPage {
+export class LectorQrPage implements OnInit {
   attendanceForm: FormGroup;
   qrScanned: boolean = false;
 
@@ -23,6 +23,8 @@ export class RegistrarAsistenciaPage {
       date: [{ value: '', disabled: true }, Validators.required]
     });
   }
+
+  ngOnInit() {}
 
   handleQrCodeResult(result: string) {
     try {

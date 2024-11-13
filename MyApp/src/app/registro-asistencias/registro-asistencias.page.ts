@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro-asistencias.page.scss'],
 })
 export class RegistroAsistenciasPage {
-  texto: string = ''; // Cambia a string
+  texto: string = '';
   asignaturas: string[] = [
     'Matemáticas',
     'Programacion Movile',
@@ -16,8 +16,9 @@ export class RegistroAsistenciasPage {
     'Arquitectura',
     'calidad de software'
   ];
+  seccion: string = ''; // Nueva propiedad para la sección
 
   generarQR(asignatura: string) {
-    this.texto = asignatura; // Asigna una cadena
+    this.texto = `${asignatura} - ${this.seccion}`; // Concatenar asignatura y sección
   }
 }

@@ -8,6 +8,18 @@
 </ion-header>
 <ion-content [fullscreen]="true" class="asignaturas-container">
   <div class="qr-container">
+    <select [(ngModel)]="seccion" class="qr-input">
+      <option value="" disabled selected>Seleccione la sección</option>
+      <option value="001-D">001-D</option>
+      <option value="002-D">002-D</option>
+      <option value="003-D">003-D</option>
+      <option value="001-A">001-A</option>
+      <option value="002-A">002-A</option>
+      <option value="003-A">003-A</option>
+      <option value="001-C">001-C</option>
+      <option value="002-C">002-C</option>
+      <option value="003-C">003-C</option>
+    </select>
     <input type="text" [(ngModel)]="texto" placeholder="Contenido del QR" class="qr-input" readonly>
     <br>
     <qrcode [qrdata]="texto" [width]="350" class="qr-image"></qrcode>
