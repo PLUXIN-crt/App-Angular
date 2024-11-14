@@ -258,6 +258,22 @@
       "section": "002-D",
       "date": "2024-11-14",
       "presente": true
+    },
+    {
+      "id": "4e1d",
+      "studentId": "3",
+      "subject": "Arquitectura",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "9311",
+      "studentId": "3",
+      "subject": "Etica",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
     }
   ]
 }
