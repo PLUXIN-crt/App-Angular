@@ -8,13 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AsignaturasPage implements OnInit {
   asignaturas: any[] = [
-    { id: 1, nombre: 'Matematica Aplicada 001-D', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 2, nombre: 'Programacion mobile 003-A', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 3, nombre: 'Estadistica 001-D', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 4, nombre: 'Ingles Avanzado 004-A', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 5, nombre: 'Etica 003-B', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 6, nombre: 'Arquitectura 005-B', imagen: 'assets/source/bannertest.jpeg' },
-    { id: 7, nombre: 'Calidad de software 006-F', imagen: 'assets/source/bannertest.jpeg' },
+    { id: 1, nombre: 'Matematica Aplicada 001-D', imagen: 'assets/source/Matematica.webp' },
+    { id: 2, nombre: 'Programacion mobile 003-A', imagen: 'assets/source/Programacion.jpg' },
+    { id: 3, nombre: 'Estadistica 001-D', imagen: 'assets/source/Estadistica.jpg' },
+    { id: 4, nombre: 'Ingles Avanzado 004-A', imagen: 'assets/source/Ingles.jpg' },
+    { id: 5, nombre: 'Etica 003-B', imagen: 'assets/source/etica.webp' },
+    { id: 6, nombre: 'Arquitectura 005-B', imagen: 'assets/source/Arquitectura.webp' },
+    { id: 7, nombre: 'Calidad de software 006-F', imagen: 'assets/source/Calidad.webp' },
   ];
   profesorId: number | null = null;
 
