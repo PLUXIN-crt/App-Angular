@@ -207,6 +207,14 @@
       "section": "001-D",
       "date": "2024-11-14",
       "presente": true
+    },
+    {
+      "id": "e44d",
+      "studentId": 1,
+      "subject": "Ingles avanzado",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
     }
   ]
 }
