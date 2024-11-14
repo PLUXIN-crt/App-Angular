@@ -156,6 +156,14 @@
       "section": "001-A",
       "date": "2024-11-14",
       "presente": true
+    },
+    {
+      "id": "07b6",
+      "studentId": "3",
+      "subject": "Etica",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
     }
   ]
 }

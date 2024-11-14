@@ -28,5 +28,12 @@
         </div>
       </ion-item-group>
     </ion-list>
+    <div *ngIf="totalAsistencias > 0">
+      <ion-card>
+        <ion-card-content>
+          Total de alumnos que asistieron a tu clase: {{ totalAsistencias }}
+        </ion-card-content>
+      </ion-card>
+    </div>
   </div>
 </ion-content>
