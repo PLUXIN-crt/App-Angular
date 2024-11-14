@@ -1,97 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-asistencias',
   templateUrl: './asistencias.page.html',
   styleUrls: ['./asistencias.page.scss'],
 })
-export class AsistenciasPage {
-  // Datos de las asignaturas con su estado de asistencia
-  registros = [
-    {
-      asignatura: 'Matematica Aplicada 001-D',
-      codigo: 'ASY4131',
-      clasesAsistidas: 11,
-      totalClases: 11,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 12), presente: true },
-        { fecha: new Date(2024, 7, 13), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Programacion mobile 003-A',
-      codigo: 'CSY4111',
-      clasesAsistidas: 7,
-      totalClases: 9,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Estadistica 001-D',
-      codigo: 'CSY4111',
-      clasesAsistidas: 9,
-      totalClases: 9,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Ingles Avanzado 004-A',
-      codigo: 'CSY4111',
-      clasesAsistidas: 11,
-      totalClases: 13,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Etica 003-B',
-      codigo: 'CSY4111',
-      clasesAsistidas: 5,
-      totalClases: 5,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Arquitectura 005-B',
-      codigo: 'CSY4111',
-      clasesAsistidas: 6,
-      totalClases: 9,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-    {
-      asignatura: 'Calidad de software 006-F',
-      codigo: 'CSY4111',
-      clasesAsistidas: 5,
-      totalClases: 9,
-      expandido: false,
-      asistencias: [
-        { fecha: new Date(2024, 7, 14), presente: false },
-        { fecha: new Date(2024, 7, 15), presente: true },
-      ],
-    },
-  ];
+export class AsistenciasPage implements OnInit {
+  registros: any[] = [];
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.obtenerAsistencias();
+  }
+
+  obtenerAsistencias() {
+    const username = localStorage.getItem('username');
+    this.http.get<any[]>(`http://localhost:3000/users?username=${username}`).subscribe(users => {
+      const user = users[0];
+      if (user) {
+        this.http.get<any[]>(`http://localhost:3000/attendances?studentId=${user.id}`).subscribe(attendances => {
+          const registrosMap = new Map();
+          attendances.forEach(attendance => {
+            if (!registrosMap.has(attendance.subject)) {
+              registrosMap.set(attendance.subject, {
+                asignatura: attendance.subject,
+                seccion: attendance.section,
+                clasesAsistidas: 0,
+                totalClases: 0,
+                expandido: false,
+                asistencias: []
+              });
+            }
+            const registro = registrosMap.get(attendance.subject);
+            registro.totalClases++;
+            if (attendance.presente) {
+              registro.clasesAsistidas++;
+            }
+            registro.asistencias.push({
+              fecha: attendance.date,
+              presente: attendance.presente
+            });
+          });
+          this.registros = Array.from(registrosMap.values());
+        });
+      }
+    });
+  }
 
   // Método para calcular el porcentaje de asistencia
   calcularPorcentaje(registro: any): number {
-    // Calcula el porcentaje de clases asistidas y redondea a un decimal, luego convierte a número
     return Number(((registro.clasesAsistidas / registro.totalClases) * 100).toFixed(1));
   }
 }

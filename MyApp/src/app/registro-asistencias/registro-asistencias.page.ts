@@ -17,8 +17,9 @@ export class RegistroAsistenciasPage {
     'calidad de software'
   ];
   seccion: string = ''; // Nueva propiedad para la sección
+  asignaturaSeleccionada: string = ''; // Nueva propiedad para la asignatura seleccionada
 
-  generarQR(asignatura: string) {
-    this.texto = `${asignatura} - ${this.seccion}`; // Concatenar asignatura y sección
+  actualizarQR() {
+    this.texto = `${this.asignaturaSeleccionada} - ${this.seccion}`; // Concatenar asignatura y sección
   }
 }

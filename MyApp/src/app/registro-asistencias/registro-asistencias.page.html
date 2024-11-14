@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content [fullscreen]="true" class="asignaturas-container">
   <div class="qr-container">
-    <select [(ngModel)]="seccion" class="qr-input">
+    <select [(ngModel)]="seccion" (ngModelChange)="actualizarQR()" class="qr-input">
       <option value="" disabled selected>Seleccione la sección</option>
       <option value="001-D">001-D</option>
       <option value="002-D">002-D</option>
@@ -25,7 +25,7 @@
     <qrcode [qrdata]="texto" [width]="350" class="qr-image"></qrcode>
   </div>
   <ion-list>
-    <ion-card *ngFor="let asignatura of asignaturas" class="asignatura-card" (click)="generarQR(asignatura)">
+    <ion-card *ngFor="let asignatura of asignaturas" class="asignatura-card" (click)="asignaturaSeleccionada = asignatura; actualizarQR()">
       <img src="assets/source/bannertest.jpeg" alt="Imagen de asignatura" class="asignatura-img">
       <ion-card-content class="asignatura-content">
         <h2>{{ asignatura }}</h2>

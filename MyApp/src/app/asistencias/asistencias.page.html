@@ -14,7 +14,6 @@
         <ion-item detail="true" (click)="registro.expandido = !registro.expandido">
           <ion-label>
             <h2>{{ registro.asignatura }}</h2>
-            <p>{{ registro.codigo }}</p>
             <p>{{ calcularPorcentaje(registro) }}% ({{ registro.clasesAsistidas }} DE {{ registro.totalClases }} CLASES)</p>
           </ion-label>
         </ion-item>

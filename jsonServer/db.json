@@ -89,57 +89,175 @@
   ],
   "subjects": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Matemáticas"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Programacion Movile"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Estadistica"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Ingles Avanzado"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "Etica"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Arquitectura"
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "Calidad de software"
     }
   ],
-  "sections": [
-    "001-D",
-    "002-D",
-    "003-D",
-    "001-A",
-    "002-A",
-    "003-A",
-    "001-C",
-    "002-C",
-    "003-C"
-  ],
   "attendances": [
     {
-      "studentId": "3",
-      "subjectId": "1",
+      "studentId": 3,
+      "subjectId": 1,
       "section": "001-D",
-      "date": "2023-10-01"
+      "date": "2023-10-10",
+      "presente": true
     },
     {
-      "studentId": "4",
-      "subjectId": "2",
+      "studentId": 3,
+      "subjectId": 2,
+      "section": "001-D",
+      "date": "2023-10-11",
+      "presente": true
+    },
+    {
+      "studentId": 4,
+      "subjectId": 1,
       "section": "002-D",
-      "date": "2023-10-01"
+      "date": "2023-10-10",
+      "presente": true
+    },
+    {
+      "id": "a58b",
+      "studentId": "3",
+      "subject": "Matemáticas",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "1959",
+      "studentId": "3",
+      "subject": "Matemáticas",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "141a",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "080b",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "3c28",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "1bbb",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "7b65",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "56a0",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "a96c",
+      "studentId": "3",
+      "subject": "Ingles avanzado",
+      "section": "001-D",
+      "date": "2024-11-13",
+      "presente": true
+    },
+    {
+      "id": "4496",
+      "studentId": "3",
+      "subject": "Ingles avanzado",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "b60f",
+      "studentId": "3",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "3f9c",
+      "studentId": "3",
+      "subject": "calidad de software",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "a9f9",
+      "studentId": "4",
+      "subject": "Matemáticas",
+      "section": "002-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "18f5",
+      "studentId": "4",
+      "subject": "Estadistica",
+      "section": "002-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "fbaa",
+      "studentId": "4",
+      "subject": "calidad de software",
+      "section": "002-D",
+      "date": "2024-11-14",
+      "presente": true
     }
   ]
 }
