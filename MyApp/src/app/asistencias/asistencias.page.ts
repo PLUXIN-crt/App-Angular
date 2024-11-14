@@ -23,9 +23,10 @@ export class AsistenciasPage implements OnInit {
       if (user) {
         if (user.role === 'profesor') {
           this.http.get<any[]>(`http://localhost:3000/attendances?section=${user.section}`).subscribe(attendances => {
-            this.totalAsistencias = attendances.length;
+            const uniqueStudents = new Set();
             const registrosMap = new Map();
             attendances.forEach(attendance => {
+              uniqueStudents.add(attendance.studentId);
               if (!registrosMap.has(attendance.subject)) {
                 registrosMap.set(attendance.subject, {
                   asignatura: attendance.subject,
@@ -47,6 +48,7 @@ export class AsistenciasPage implements OnInit {
               });
             });
             this.registros = Array.from(registrosMap.values());
+            this.totalAsistencias = uniqueStudents.size;
           });
         } else {
           this.http.get<any[]>(`http://localhost:3000/attendances?studentId=${user.id}`).subscribe(attendances => {

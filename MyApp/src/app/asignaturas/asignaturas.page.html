@@ -9,10 +9,10 @@
 
 <ion-content>
   <div class="asignaturas-container">
-    <ion-card *ngFor="let asignatura of asignaturas" class="asignatura-card">
+    <ion-card *ngFor="let asignatura of asignaturas" [ngClass]="{'asignatura-profesor': esAsignaturaDelProfesor(asignatura.id)}" class="asignatura-card">
       <img [src]="asignatura.imagen" alt="Imagen de asignatura" class="asignatura-img">
       <ion-card-content class="asignatura-content">
-        <h2>{{ asignatura.nombre }}</h2>
+        <h2 [ngClass]="{'asignatura-profesor-texto': esAsignaturaDelProfesor(asignatura.id)}">{{ asignatura.nombre }}</h2>
       </ion-card-content>
     </ion-card>
   </div>

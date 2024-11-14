@@ -58,3 +58,49 @@ h2 {
   font-size: 18px;
   color: #fff; /* Texto blanco */
 }
+
+.asignaturas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #000; /* Fondo negro */
+}
+
+.asignatura-card {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+  background-color: #222; /* Fondo oscuro de la tarjeta */
+}
+
+.asignatura-profesor {
+  border: 2px solid #FFD700; /* Borde dorado para resaltar la asignatura del profesor */
+}
+
+.asignatura-profesor-texto {
+  color: #FFD700; /* Texto dorado para resaltar la asignatura del profesor */
+}
+
+.asignatura-img {
+  width: 100%;
+  height: 150px; /* Ajusta el alto según necesites */
+  object-fit: cover;
+  border-bottom: 2px solid #333; /* Línea decorativa oscura */
+}
+
+.asignatura-content {
+  text-align: center;
+  padding: 10px;
+  background-color: #222; /* Fondo oscuro para el contenido */
+  color: #fff; /* Texto blanco */
+}
+
+h2 {
+  margin: 10px 0 0 0;
+  font-size: 18px;
+  color: #fff; /* Texto blanco */
+}

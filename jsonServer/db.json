@@ -6,7 +6,7 @@
       "email": "j@mail.com",
       "role": "profesor",
       "section": "001-D",
-      "id": "1"
+      "id": 1
     },
     {
       "username": "Ana",
@@ -14,7 +14,63 @@
       "email": "a@mail.com",
       "role": "profesor",
       "section": "002-D",
-      "id": "2"
+      "id": 2
+    },
+    {
+      "username": "Carlos",
+      "password": "1234",
+      "email": "c@mail.com",
+      "role": "profesor",
+      "section": "003-D",
+      "id": 3
+    },
+    {
+      "username": "Elena",
+      "password": "1234",
+      "email": "e@mail.com",
+      "role": "profesor",
+      "section": "001-A",
+      "id": 4
+    },
+    {
+      "username": "Pedro",
+      "password": "1234",
+      "email": "p@mail.com",
+      "role": "profesor",
+      "section": "002-A",
+      "id": 5
+    },
+    {
+      "username": "Lucia",
+      "password": "1234",
+      "email": "lu@mail.com",
+      "role": "profesor",
+      "section": "003-A",
+      "id": 6
+    },
+    {
+      "username": "Miguel",
+      "password": "1234",
+      "email": "mi@mail.com",
+      "role": "profesor",
+      "section": "001-C",
+      "id": 7
+    },
+    {
+      "username": "Sofia",
+      "password": "1234",
+      "email": "so@mail.com",
+      "role": "profesor",
+      "section": "002-C",
+      "id": 8
+    },
+    {
+      "username": "Diego",
+      "password": "1234",
+      "email": "d@mail.com",
+      "role": "profesor",
+      "section": "003-C",
+      "id": 9
     },
     {
       "username": "Luis",
@@ -22,7 +78,7 @@
       "email": "l@mail.com",
       "role": "estudiante",
       "section": "001-D",
-      "id": "3"
+      "id": 10
     },
     {
       "username": "Maria",
@@ -30,7 +86,7 @@
       "email": "m@mail.com",
       "role": "estudiante",
       "section": "002-D",
-      "id": "4"
+      "id": 11
     },
     {
       "username": "Carlos",
@@ -38,7 +94,7 @@
       "email": "c@mail.com",
       "role": "estudiante",
       "section": "003-D",
-      "id": "5"
+      "id": 12
     },
     {
       "username": "Elena",
@@ -46,7 +102,7 @@
       "email": "e@mail.com",
       "role": "estudiante",
       "section": "001-A",
-      "id": "6"
+      "id": 13
     },
     {
       "username": "Pedro",
@@ -54,7 +110,7 @@
       "email": "p@mail.com",
       "role": "estudiante",
       "section": "002-A",
-      "id": "7"
+      "id": 14
     },
     {
       "username": "Lucia",
@@ -62,7 +118,7 @@
       "email": "lu@mail.com",
       "role": "estudiante",
       "section": "003-A",
-      "id": "8"
+      "id": 15
     },
     {
       "username": "Miguel",
@@ -70,7 +126,7 @@
       "email": "mi@mail.com",
       "role": "estudiante",
       "section": "001-C",
-      "id": "9"
+      "id": 16
     },
     {
       "username": "Sofia",
@@ -78,7 +134,7 @@
       "email": "so@mail.com",
       "role": "estudiante",
       "section": "002-C",
-      "id": "10"
+      "id": 17
     },
     {
       "username": "Diego",
@@ -86,7 +142,7 @@
       "email": "d@mail.com",
       "role": "estudiante",
       "section": "003-C",
-      "id": "11"
+      "id": 18
     }
   ],
   "subjects": [
@@ -121,45 +177,32 @@
   ],
   "attendances": [
     {
-      "studentId": 3,
-      "subjectId": 1,
+      "id": "ffcd",
+      "studentId": 10,
+      "subject": "Programacion Movile",
       "section": "001-D",
-      "date": "2023-10-10",
-      "presente": true
-    },
-    {
-      "studentId": 3,
-      "subjectId": 2,
-      "section": "001-D",
-      "date": "2023-10-11",
-      "presente": true
-    },
-    {
-      "studentId": 4,
-      "subjectId": 1,
-      "section": "002-D",
-      "date": "2023-10-10",
-      "presente": true
-    },
-    {
-      "id": "f439",
-      "studentId": "6",
-      "subject": "Ingles avanzado",
-      "section": "001-A",
       "date": "2024-11-14",
       "presente": true
     },
     {
-      "id": "ec00",
-      "studentId": "6",
-      "subject": "Ingles avanzado",
-      "section": "001-A",
+      "id": "d1fb",
+      "studentId": 10,
+      "subject": "Matemáticas",
+      "section": "001-D",
       "date": "2024-11-14",
       "presente": true
     },
     {
-      "id": "07b6",
-      "studentId": "3",
+      "id": "fc0f",
+      "studentId": 10,
+      "subject": "Ingles avanzado",
+      "section": "001-D",
+      "date": "2024-11-14",
+      "presente": true
+    },
+    {
+      "id": "cd22",
+      "studentId": 10,
       "subject": "Etica",
       "section": "001-D",
       "date": "2024-11-14",

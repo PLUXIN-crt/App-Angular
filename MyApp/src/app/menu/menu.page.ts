@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { NavController, AlertController } from '@ionic/angular';
 
 @Component({
@@ -6,11 +7,38 @@ import { NavController, AlertController } from '@ionic/angular';
   templateUrl: './menu.page.html',
   styleUrls: ['./menu.page.scss'],
 })
-export class MenuPage {
+export class MenuPage implements OnInit {
+  profesorNombre: string = '';
+  asignatura: string = '';
+  seccion: string = '';
 
-  constructor(private navCtrl: NavController, private alertController: AlertController) {}
+  constructor(
+    private http: HttpClient,
+    private navCtrl: NavController,
+    private alertController: AlertController
+  ) {}
 
-  // Método para cerrar sesión con un pop-up de confirmación
+  ngOnInit() {
+    this.obtenerDatosProfesor();
+  }
+
+  obtenerDatosProfesor() {
+    const username = localStorage.getItem('username');
+    this.http.get<any[]>(`http://localhost:3000/users?username=${username}`).subscribe(users => {
+      const user = users[0];
+      if (user && user.role === 'profesor') {
+        this.profesorNombre = user.username;
+        this.seccion = user.section;
+        this.http.get<any[]>(`http://localhost:3000/subjects`).subscribe(subjects => {
+          const subject = subjects.find(s => s.id === user.id);
+          if (subject) {
+            this.asignatura = subject.name;
+          }
+        });
+      }
+    });
+  }
+
   async logout() {
     const alert = await this.alertController.create({
       header: 'Cerrar Sesión',
@@ -26,7 +54,6 @@ export class MenuPage {
         {
           text: 'Cerrar Sesión',
           handler: () => {
-            // Aquí realizas la lógica para cerrar la sesión
             this.handleLogout();
           }
         }
@@ -36,12 +63,8 @@ export class MenuPage {
     await alert.present();
   }
 
-  // Método que maneja el cierre de sesión y redirige a la página de inicio de sesión
   handleLogout() {
-    // Aquí puedes realizar cualquier lógica adicional para cerrar la sesión
     console.log('Sesión cerrada correctamente');
-    
-    // Redirigir a la página de inicio de sesión
-    this.navCtrl.navigateRoot('/inicio'); // Ajusta la ruta según la configuración de tu aplicación
+    this.navCtrl.navigateRoot('/inicio');
   }
 }
