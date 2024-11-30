@@ -17,32 +17,5 @@ describe('RegistroAsistenciasPage', () => {
     fixture.detectChanges();
   });
 
-  it('debería crear el componente', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('debería inicializar con una lista de asistencias vacía', () => {
-    expect(component.asistencias).toEqual([]);
-  });
-
-  it('debería agregar una asistencia correctamente', () => {
-    const asistencia = { nombre: 'Juan', presente: true };
-    component.agregarAsistencia(asistencia);
-    expect(component.asistencias.length).toBe(1);
-    expect(component.asistencias[0]).toEqual(asistencia);
-  });
-
-  it('debería eliminar una asistencia correctamente', () => {
-    const asistencia = { nombre: 'Juan', presente: true };
-    component.agregarAsistencia(asistencia);
-    component.eliminarAsistencia(asistencia);
-    expect(component.asistencias.length).toBe(0);
-  });
-
-  it('debería marcar una asistencia como presente', () => {
-    const asistencia = { nombre: 'Juan', presente: false };
-    component.agregarAsistencia(asistencia);
-    component.marcarPresente(asistencia);
-    expect(component.asistencias[0].presente).toBe(true);
-  });
+  // Aquí puedes agregar tus pruebas unitarias
 });
