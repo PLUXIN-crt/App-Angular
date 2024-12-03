@@ -28,9 +28,9 @@ export class InicioPage {
         localStorage.setItem('userType', user.role); // Guarda el tipo de usuario en el almacenamiento local
         localStorage.setItem('username', user.username); // Guarda el nombre de usuario en el almacenamiento local
         if (user.role === 'profesor') {
-          this.navCtrl.navigateForward('/menu'); // Redirigir a la página de menú para profesores
+          this.navCtrl.navigateForward('/menu-profesor'); // Redirigir a la página de menú para profesores
         } else if (user.role === 'estudiante') {
-          this.navCtrl.navigateForward('/menu-profesor'); // Redirigir a la página de menú para estudiantes
+          this.navCtrl.navigateForward('/menu'); // Redirigir a la página de menú para estudiantes
         }
       } else {
         this.errorMessage = 'Usuario o contraseña incorrectos'; // Mostramos el mensaje de error si no coinciden

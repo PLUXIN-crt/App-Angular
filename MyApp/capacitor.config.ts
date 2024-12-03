@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'Asis_Duoc',
+  appName: 'Registro_Asis',
   webDir: 'www',
   server: {
     androidScheme: 'http', // Permitir HTTP en lugar de HTTPS
