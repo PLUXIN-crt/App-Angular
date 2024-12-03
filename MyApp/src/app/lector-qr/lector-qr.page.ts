@@ -34,10 +34,10 @@ export class LectorQrPage implements OnInit {
       const username = localStorage.getItem('username');
       const currentDate = new Date().toISOString().split('T')[0];
 
-      this.http.get<any[]>(`http://localhost:3000/users?username=${username}`).subscribe(users => {
+      this.http.get<any[]>(`http://192.168.100.23/users?username=${username}`).subscribe(users => {
         const user = users[0];
         if (user && user.section === section) {
-          this.http.get<any[]>(`http://localhost:3000/attendances?studentId=${user.id}&subject=${subject}&date=${currentDate}`).subscribe(existingAttendances => {
+          this.http.get<any[]>(`http://192.168.100.23/attendances?studentId=${user.id}&subject=${subject}&date=${currentDate}`).subscribe(existingAttendances => {
             if (existingAttendances.length > 0) {
               this.message = `Ya has registrado tu asistencia para la asignatura ${subject} hoy.`;
             } else {
@@ -53,7 +53,7 @@ export class LectorQrPage implements OnInit {
                 presente: true // Asegúrate de incluir esta propiedad
               };
 
-              this.http.post('http://localhost:3000/attendances', attendance).subscribe(() => {
+              this.http.post('http://192.168.100.23/attendances', attendance).subscribe(() => {
                 this.message = 'Asistencia registrada correctamente';
               });
             }

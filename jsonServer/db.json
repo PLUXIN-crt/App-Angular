@@ -215,6 +215,14 @@
       "section": "001-D",
       "date": "2024-11-14",
       "presente": true
+    },
+    {
+      "id": "7948",
+      "studentId": "10",
+      "subject": "Programacion Movile",
+      "section": "001-D",
+      "date": "2024-12-03",
+      "presente": true
     }
   ]
 }
