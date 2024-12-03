@@ -20,7 +20,7 @@ export class InicioPage {
 
   // Método para validar el inicio de sesión
   login() {
-    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+    this.http.get<any[]>('http://192.168.100.23:3000/users').subscribe(users => {
       const user = users.find(u => u.username === this.username && u.password === this.password);
       if (user) {
         this.errorMessage = ''; // Si las credenciales son correctas, eliminamos el mensaje de error

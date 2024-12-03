@@ -37,7 +37,7 @@ export class CambioClavePage {
     }
 
     // Realizar la solicitud HTTP GET para obtener los datos del usuario
-    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+    this.http.get<any[]>('http://192.168.100.23:3000/users').subscribe(users => {
       const user = users.find(u => u.username === username);
       if (user) {
         // Verificar la contraseña actual
@@ -48,7 +48,7 @@ export class CambioClavePage {
 
         // Actualizar la contraseña
         user.password = this.newPassword;
-        this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(() => {
+        this.http.put(`http://192.168.100.23:3000/users/${user.id}`, user).subscribe(() => {
           this.errorMessage = '';
           this.showSuccessAlert(); // Mostrar el pop-up de confirmación
         });

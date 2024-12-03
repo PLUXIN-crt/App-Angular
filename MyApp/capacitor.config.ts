@@ -6,7 +6,8 @@ const config: CapacitorConfig = {
   webDir: 'www',
   server: {
     androidScheme: 'http', // Permitir HTTP en lugar de HTTPS
-    cleartext: true       // Permitir tráfico sin cifrar en Android (HTTP)
+    cleartext: true,       // Permitir tráfico sin cifrar en Android (HTTP)
+    hostname: '192.168.100.23' // Dirección IP de tu PC
   }
 };
 

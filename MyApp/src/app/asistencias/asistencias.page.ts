@@ -18,11 +18,11 @@ export class AsistenciasPage implements OnInit {
 
   obtenerAsistencias() {
     const username = localStorage.getItem('username');
-    this.http.get<any[]>(`http://localhost:3000/users?username=${username}`).subscribe(users => {
+    this.http.get<any[]>(`http://192.168.100.23:3000/users?username=${username}`).subscribe(users => {
       const user = users[0];
       if (user) {
         if (user.role === 'profesor') {
-          this.http.get<any[]>(`http://localhost:3000/attendances?section=${user.section}`).subscribe(attendances => {
+          this.http.get<any[]>(`http://192.168.100.23:3000/attendances?section=${user.section}`).subscribe(attendances => {
             const uniqueStudents = new Set();
             const registrosMap = new Map();
             attendances.forEach(attendance => {
@@ -51,7 +51,7 @@ export class AsistenciasPage implements OnInit {
             this.totalAsistencias = uniqueStudents.size;
           });
         } else {
-          this.http.get<any[]>(`http://localhost:3000/attendances?studentId=${user.id}`).subscribe(attendances => {
+          this.http.get<any[]>(`http://192.168.100.23:3000/attendances?studentId=${user.id}`).subscribe(attendances => {
             const registrosMap = new Map();
             attendances.forEach(attendance => {
               if (!registrosMap.has(attendance.subject)) {
